@@ -21,6 +21,7 @@ function App() {
   // index of currently selected item
   const [selected, setSelected] = useState(0);
 
+  let todoList = ["Get grocerries", "Go to doctor", "Take dogo for a walk"];
   return (
     <div className="App">
       <Header />
@@ -29,7 +30,7 @@ function App() {
           <NewTask />
           <Buttons />
         </div>
-        <TodoList />
+        <TodoList items={todoList}/>
       </div>
       <Footer />
     </div>
