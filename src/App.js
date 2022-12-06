@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Buttons from "./components/buttons";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import NewTask from "./components/newtask";
+import TodoList from "./components/todo_list";
+import { useState } from "react";
 
 function App() {
+  // all the state goes here!
+  const [state, setState] = useState([
+    {
+      todo: "create a todo app",
+      done: false,
+    }
+  ]);
+
+  // index of currently selected item
+  const [selected, setSelected] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div>
+        <div>
+          <NewTask />
+          <Buttons />
+        </div>
+        <TodoList />
+      </div>
+      <Footer />
     </div>
   );
 }
