@@ -7,6 +7,8 @@ import NewTask from "./components/newtask";
 import TodoList from "./components/todo_list";
 import { useState } from "react";
 
+/* eslint no-unused-vars:"off" */
+
 function App() {
   // all the state goes here!
   const [state, setState] = useState([
