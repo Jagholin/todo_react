@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Buttons from "./components/buttons";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Header from "./components/header";
 import NewTask from "./components/newtask";
 import TodoList from "./components/todo_list";
@@ -32,6 +32,7 @@ function App() {
         <TodoList />
       </div>
       <Footer />
+
     </div>
   );
 }
