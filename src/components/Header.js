@@ -3,7 +3,7 @@ import "./header.css";
 function Header(props) {
     return ( 
         <div className="header">
-            <h1 className="text">Dear fellow colleagues, this is our To Do List</h1> 
+            <h1 className="text">Fellow comrades, this is our To Do List</h1> 
             <a href="https://www.github.com/Jagholin" target="_blank">
                 <button className="link">Pawel</button>
             </a>
