@@ -11,26 +11,25 @@ import { useState } from "react";
 
 function App() {
   // all the state goes here!
-  const [state, setState] = useState([
+  const [state, setState] = useState(
     {
-      todo: "create a todo app",
-      done: false,
+      todo: ["Get groceries", "Go for a walk", "Go to doctor", "Do Exercises", "React Tutorial"],
+      done: [false, false, false, false],
     }
-  ]);
+  );
 
   // index of currently selected item
   const [selected, setSelected] = useState(0);
 
-  let todoList = ["Get grocerries", "Go to doctor", "Take dogo for a walk"];
   return (
     <div className="App">
       <Header />
-      <div>
+      <div> 
         <div>
           <NewTask />
           <Buttons />
         </div>
-        <TodoList items={todoList}/>
+        <TodoList items={state} setItems={setState} itemSelected={selected} setItemSelected={setSelected}/>
       </div>
       <Footer />
     </div>
