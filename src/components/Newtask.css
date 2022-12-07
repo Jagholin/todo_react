@@ -1,3 +1,12 @@
 .newTask {
-    background-color: pink;
+    text-align: center;
+}
+
+.input {
+    width: 300px;
+    padding: 10px 20px; 
+    margin: 15px 60px;
+    border: 1px solid rgb(22, 20, 20);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }

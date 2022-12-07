@@ -3,7 +3,7 @@ import "./App.css";
 import Buttons from "./components/buttons";
 import Footer from "./components/footer";
 import Header from "./components/Header";
-import NewTask from "./components/newtask";
+import NewTask from "./components/Newtask";
 import TodoList from "./components/todo_list";
 import { useState } from "react";
 
