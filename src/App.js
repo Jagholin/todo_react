@@ -11,12 +11,29 @@ import { useState } from "react";
 
 function App() {
   // all the state goes here!
-  const [state, setState] = useState([
-    {
-      todo: "create a todo app",
-      done: false,
-    }
-  ]);
+
+  // state is {todo: string, done: bool}[]
+  // state was {todo: string[], done: bool[]}
+  const [state, setState] = useState(
+    [
+      {
+        todo: "Get groceries",
+        done: false,
+      },
+      {
+        todo: "Go for a walk",
+        done: true,
+      },
+      {
+        todo: "Go to doctor",
+        done: false,
+      },
+      {
+        todo: "React Tutorial",
+        done: false,
+      }
+    ]
+  );
 
   // index of currently selected item
   const [selected, setSelected] = useState(0);
@@ -24,12 +41,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div>
+      <div> 
         <div>
           <NewTask />
           <Buttons />
         </div>
-        <TodoList />
+        <TodoList items={state} setItems={setState} itemSelected={selected} setItemSelected={setSelected}/>
       </div>
       <Footer />
     </div>
