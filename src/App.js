@@ -71,10 +71,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div> 
-        <div>
+      <div className="ContainerIB"> 
+        <div >
           <NewTask items={state} setItems={setState}  />
-          <Buttons
+          <Buttons class
             state={state}
             onTaskEdit={handleTaskEdit}
             onTaskDelete={handleTaskDelete}
