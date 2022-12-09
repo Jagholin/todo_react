@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Buttons from "./components/buttons";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NewTask from "./components/Newtask";
 import TodoList from "./components/todo_list";
@@ -83,6 +83,7 @@ function App() {
         <TodoList items={state} setItems={setState} itemSelected={selected} setItemSelected={setSelected}/>
       </div>
       <Footer />
+
     </div>
   );
 }
