@@ -2,8 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Buttons from "./components/buttons";
 import Footer from "./components/footer";
-import Header from "./components/header";
-import NewTask from "./components/newtask";
+import Header from "./components/Header";
+import NewTask from "./components/Newtask";
 import TodoList from "./components/todo_list";
 import { useState } from "react";
 
@@ -43,7 +43,7 @@ function App() {
       <Header />
       <div> 
         <div>
-          <NewTask />
+          <NewTask items={state} setItems={setState} />
           <Buttons />
         </div>
         <TodoList items={state} setItems={setState} itemSelected={selected} setItemSelected={setSelected}/>
