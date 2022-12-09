@@ -11,11 +11,28 @@ import { useState } from "react";
 
 function App() {
   // all the state goes here!
+
+  // state is {todo: string, done: bool}[]
+  // state was {todo: string[], done: bool[]}
   const [state, setState] = useState(
-    {
-      todo: ["Get groceries", "Go for a walk", "Go to doctor", "Do Exercises", "React Tutorial"],
-      done: [false, false, false, false],
-    }
+    [
+      {
+        todo: "Get groceries",
+        done: false,
+      },
+      {
+        todo: "Go for a walk",
+        done: true,
+      },
+      {
+        todo: "Go to doctor",
+        done: false,
+      },
+      {
+        todo: "React Tutorial",
+        done: false,
+      }
+    ]
   );
 
   // index of currently selected item
