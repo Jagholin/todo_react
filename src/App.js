@@ -2,8 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Buttons from "./components/buttons";
 import Footer from "./components/footer";
-import Header from "./components/header";
-import NewTask from "./components/newtask";
+import Header from "./components/Header";
+import NewTask from "./components/Newtask";
 import TodoList from "./components/todo_list";
 import { useState } from "react";
 
@@ -11,12 +11,29 @@ import { useState } from "react";
 
 function App() {
   // all the state goes here!
-  const [state, setState] = useState([
-    {
-      todo: "create a todo app",
-      done: false,
-    },
-  ]);
+
+  // state is {todo: string, done: bool}[]
+  // state was {todo: string[], done: bool[]}
+  const [state, setState] = useState(
+    [
+      {
+        todo: "Get groceries",
+        done: false,
+      },
+      {
+        todo: "Go for a walk",
+        done: true,
+      },
+      {
+        todo: "Go to doctor",
+        done: false,
+      },
+      {
+        todo: "React Tutorial",
+        done: false,
+      }
+    ]
+  );
 
   // index of currently selected item
   const [selected, setSelected] = useState(0);
@@ -54,16 +71,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div>
+      <div> 
         <div>
-          <NewTask />
+          <NewTask items={state} setItems={setState}  />
           <Buttons
             state={state}
             onTaskEdit={handleTaskEdit}
             onTaskDelete={handleTaskDelete}
           />
         </div>
-        <TodoList />
+        <TodoList items={state} setItems={setState} itemSelected={selected} setItemSelected={setSelected}/>
       </div>
       <Footer />
     </div>
