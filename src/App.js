@@ -24,7 +24,7 @@ function App() {
       <Header />
       <div>
         <div>
-          <NewTask />
+          <NewTask items={state} setItems={setState} />
           <Buttons />
         </div>
         <TodoList />
