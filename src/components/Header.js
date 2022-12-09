@@ -5,7 +5,7 @@ function Header(props) {
         <div className="header">
             <h1 className="text">Fellow comrades, this is our To Do List</h1> 
             <a href="https://www.github.com/Jagholin" target="_blank" rel="noreferrer">
-                <button className="link">Pawel</button>
+                <button className="link">Pavel</button>
             </a>
             <a href="https://github.com/Nadia551" target="_blank" rel="noreferrer">
                 <button className="link">Nadia</button>
