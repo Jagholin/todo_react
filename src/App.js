@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NewTask from "./components/Newtask";
 import TodoList from "./components/todo_list";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /* eslint no-unused-vars:"off" */
 
@@ -35,6 +35,32 @@ function App() {
     ]
   );
 
+  useEffect(() => {
+    const loc_storage = localStorage.getItem("todos");
+    if (!loc_storage) {
+      return;
+    }
+    const loaded_todos = JSON.parse(loc_storage);
+    setState(loaded_todos);
+  }, []);
+
+  const saveTodos = (todosToSave) => {
+    localStorage.setItem("todos", JSON.stringify(todosToSave));
+  }
+
+  const setStateSave = (newst) => {
+    if (typeof newst === "function") {
+      setState(oldState => {
+        let temp = newst(oldState);
+        saveTodos(temp);
+        return temp;
+      });
+    } else {
+      saveTodos(newst);
+      setState(newst);
+    }
+  }
+
   // index of currently selected item
   const [selected, setSelected] = useState(0);
 
@@ -44,7 +70,7 @@ function App() {
       return;
     }
 
-    setState(state.filter((_, ind) => ind !== selected));
+    setStateSave(state.filter((_, ind) => ind !== selected));
   };
 
   const handleTaskEdit = () => {
@@ -57,7 +83,7 @@ function App() {
       return; // User pressed cancel
     }
     if (newTodo.length > 0) {
-      setState(
+      setStateSave(
         state.map((val, ind) =>
           ind !== selected ? val : { todo: newTodo, done: false }
         )
@@ -73,14 +99,14 @@ function App() {
       <Header />
       <div className="ContainerIB"> 
         <div >
-          <NewTask items={state} setItems={setState}  />
+          <NewTask items={state} setItems={setStateSave}  />
           <Buttons class
             state={state}
             onTaskEdit={handleTaskEdit}
             onTaskDelete={handleTaskDelete}
           />
         </div>
-        <TodoList items={state} setItems={setState} itemSelected={selected} setItemSelected={setSelected}/>
+        <TodoList items={state} setItems={setStateSave} itemSelected={selected} setItemSelected={setSelected}/>
       </div>
       <Footer />
 
