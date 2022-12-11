@@ -48,4 +48,9 @@
    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border: 1px solid rgb(22, 20, 20);
   border-radius: 12px;
+  text-align: left;
+}
+
+.todo-list.card {
+  min-width: 40%;
 }

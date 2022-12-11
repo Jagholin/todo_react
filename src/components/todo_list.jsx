@@ -14,7 +14,7 @@ function TodoList(props) {
 
     // props.items is now {todo: string, done: bool}[]
     return ( 
-            <div className="card">
+            <div className="card todo-list">
                 <ul className="list-group list-group-flush">
                 {
                     props.items.map((todo, index) =>

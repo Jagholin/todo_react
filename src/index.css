@@ -14,7 +14,8 @@ code {
 .footer{
   margin-top: 1rem;
   padding: 1rem;
-  background-color: rgb(235, 195, 64);
+  background-color: black;
+  color: white;
   position: fixed;
   bottom: 0;
   left: 0;
