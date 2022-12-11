@@ -27,12 +27,14 @@ function NewTask({items, setItems}) {
     }
 
     return ( 
+    <>
+        <h2 className="title">Enter new Task!</h2>
         <div className= "newTask">
-            <h2 className="title">Enter new Task!</h2>
             <input type="text" className="input" ref={todoElementRef} 
             onKeyDown={(e) => handleKeyDown(e)}  />
             <button className="addButton" onClick={handleAddTodo}>Add</button>
-        </div> 
+        </div>
+    </>
     );
 }
 
